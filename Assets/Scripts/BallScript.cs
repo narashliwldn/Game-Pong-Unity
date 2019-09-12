@@ -32,8 +32,19 @@ public class BallScript : MonoBehaviour
             directionY *= -1;
         }
 
-        if(other.gameObject.tag == "dinding_horizontal"){
+        if(other.gameObject.tag == "player"){
             directionX *= -1;
         }
+
+        if(other.gameObject.name == "batas_kanan"){
+            GlobalScript.Instance.AddScoreA();
+            transform.position = Vector3.zero;
+        }
+
+        if(other.gameObject.name == "batas_kiri"){
+            GlobalScript.Instance.AddScoreB();
+            transform.position = Vector3.zero;
+        }
+
     }
 }
